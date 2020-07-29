@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block contents %}
+   <div align = 'left'>
+    <form action="{% url 'upload' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        제목 : <input type="text" name="title">
+        <br>
+        사진 : <input type="file" name = 'image'>
+        <input type="submit" value="UPLOAD">
+        <hr>
+    </form>
+    </div>
+{%for item in profile %}
+<h3>제목 : {{item.title}}</h3>
+<img src="{{item.image.url}}" alt="">
+<br><br>
+{%endfor%}
+{% endblock contents %}

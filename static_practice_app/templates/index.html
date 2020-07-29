@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contents %}
+<br>
+<hr>
+<img src="{%static 'image/ham.jpg' %}" alt="" style="width: 460px; height: auto;">
+<hr>
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim est, voluptatibus optio numquam inventore minus vero omnis nisi, tempora harum iusto obcaecati voluptate! Cupiditate quasi nesciunt provident officiis ut reprehenderit.</p>
+<a href="{% url 'community' %}">커뮤니티 창으로 이동</a>
+{% endblock contents %}
+   
+    

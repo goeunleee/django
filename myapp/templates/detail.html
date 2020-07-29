@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block contents %}
+    <hr>
+    
+    <b>{{blog_detail.title}}<br><br>
+    <div align = "right">{{blog_detail.pub_date}}<br><br></div></b>
+    {{blog_detail.body}}<br>
+    {{blog.index}}
+    <hr>
+    
+    
+    <div align='center'>
+        {%if page.has_previous%}
+        <a href="{%url 'detail' pkey%}">이전으로</a>
+        {%endif%}
+        <a href='{% url 'return_main' %}'>목록으로</a>
+        {%if page.has_next%}
+        <a href="{%url 'detail' nkey%}">다음으로</a>
+        {%endif%}
+        <br><a href="{% url 'renew' blog_detail.id %}">수정</a> 
+        <a href="{% url 'remove' blog_detail.id  %}">삭제</a> <br>
+        p.num_pages : {{p.num_pages}}<br>
+        page_range {{p.page_range}}<br>
+        id :{{id}}<br>
+        page : {{page}}<br>
+
+        
+    </div>
+{% endblock contents %}
+    

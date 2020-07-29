@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block contents %}
+
+   
+    {%for item in profile %}
+      <h3>제목 : {{item.title}}</h3>
+      <img src="{{item.image.url}}" alt="">
+      <br><br>
+    {%endfor%}
+   
+{% endblock contents %}    

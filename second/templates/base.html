@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    li {
+        list-style: none;
+        background-color:  #FFFEAE;
+        width : 150px;
+        height: 60px;
+        float: left;
+        font-size: 20px;
+        }
+    li:first-child{background-color: white;}    
+    li:nth-child(2){border-radius:  15px 0 0 15px;}
+    li:last-child {border-radius:   0 15px 15px 0;}
+</style>
+</head>
+<body>
+    <div style="margin-left : 200px; margin-right:200px;" >
+    <ul style=" line-height: 60px; text-align: center;"  align = "center" >
+       <li><h2>My Blog</h2></li>
+       <li><a href="{% url 'index' %}">저를소개합니다</a></li>
+       <li><a href="{% url 'new'%}">일기쓰기</a></li>
+       <li><a href="{% url 'main'%}">나의일기</a></li>
+       <li><a href="{% url 'upload' %}">나의 앨범</a></li> 
+    </ul>
+    </div>
+
+    <div style="margin-left : 400px; margin-right:400px;" align = "center" >
+    <br><br><br><br><br>
+    {%block contents %}
+
+    {%endblock%}
+    </div>
+</body>
+</html> 

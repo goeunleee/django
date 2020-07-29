@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block contents %}
+  {%for item in blog%}
+  <hr >
+    <b>{{item.title}}<br>
+    <div align="right">{{item.pub_date}}<br><br></div></b>
+    {{item.sum}} ... <a href="{%url 'detail' item.id%}">더보기</a><br>
+    
+  {%endfor%}
+{% endblock contents %}
